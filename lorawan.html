@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Objectifs: 
+        o	Mettre en œuvre un objet connecté utilisant le protocole LORAWAN
+        o	Configurer un serveur de réseau LORAWAN TheThingsNetwork (TTN)
+        o	Configurer un tableau de bord graphique minimal avec l’outil Cayenne MyDevice
+        o	Créer une application cloud NODERED de traitement des données de l’objet connecté
+        o	Créer une base de données Influx DB pour l’archivage des données de votre objet connecté
+         
+    </pre>
+    <pre>Qu'est-ce que le Lorawan ? 
+        C'est un protocole de communication sans fil 
+        à très basse consommation d'énergie. Basé sur la modulation
+        LoRa (Long Range) elle permet la connection des appareils IoT 
+        sur de vastes zones géographiques. 
+    </pre>
+
+    <pre>Qu'est-ce que TTN ? 
+        The Things Network est un réseau LoRaWAN ouvert et décentralisé
+        pour connecter les appareils IoT. La plateforme permet
+        de collecter, traiter et analyser les données envoyés des 
+        appareils connectés. 
+    </pre>
+
+    <pre>Qu'est-ce que le MQTT?
+        Messge Queuing Telemetry Transport est un protocole de 
+        messagerie pour les applications IoT. 
+    </pre>
+
+    <pre>Etape 1
+        Configuration du réseau LoRaWAN TTN
+        <img src="demo-lorawan-2023.jpg" alt="LoRaWAN">
+    </pre>
+
+    <pre>
+        Etape 2
+        Le code ci dessous permet de traiter les données reçues
+        par TTN depuis la Mbed, de les affecter pour les envoyer 
+        sur Node Red. 
+        L'objectif est de faciliter le traitement de données.
+        <img src="formatter_code" alt="code">
+    </pre>
+
+    <pre>Etape  3
+        Utilisation de Cayenne pour la visualisation des données.
+        <img src="cayenne" alt="cayenne">
+    </pre>
+
+    <pre>
+        Etape 4
+        Utilisation de la base de données InfluxDB
+        Conçue pour le stockage, la recherche et la récupération
+        de données temporelles, elle est optimisée pour 
+        l'analyse de données évoluant au fil du temps. 
+
+        4.1
+        Création de la base de données avec InfluxDB avec la requête 
+        CREATE DATABASE [le nom de notre DB].
+        L’image suivante nous montre comment voir quelles databases sont présentes sur notre
+        machine, ici il y en a deux : gr12_tpres3 et GRALT_2023.
+        <img src="influx_db" alt="influx db">
+
+        4.2 
+        Nous devons ensuite utiliser la base de données pour y effectuer davantage d’action, grâce
+        à la première requête USE [nom DB] .
+    </pre>
+
+    <pre>
+        Etape 5
+        Utilisation de Node-RED.
+        C'est un environnement de développement graphique.
+
+        5.1
+        Connection à TTN et au device TTN qui reçoit les données.
+        <img src="conect_TTN" alt="connexion à TTN">
+
+        5.2
+        Extraction des données
+    </pre>
+</body>
+</html>
